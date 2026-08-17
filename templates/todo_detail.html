@@ -1,0 +1,151 @@
+{% include '_navbar.html' %}
+
+<div class="card-container">
+    <div class="card todo-detail">
+        {% if todo.image %}
+            <img style="border: 1px solid rgba(255, 255, 255, 0.1);" class="todo-image" src="{{ todo.image.url }}" alt="{{ todo.title }}">
+        {% else %}
+            <img style="border: 1px solid rgba(255, 255, 255, 0.1);" class="todo-image" src="https://img.magnific.com/premium-vector/white-clipboard-task-management-todo-check-list-efficient-work-project-plan-fast-progress-level-up-concept-assignment-exam-productivity-solution-icon-3d-vector-render-pink-background_412828-2733.jpg?semt=ais_hybrid&w=740&q=80" alt="No image">
+        {% endif %}
+
+        <h1>Todo haqida to'liq ma'lumot</h1>
+
+        <h2>{{ todo.title }}</h2>
+        <p>{{ todo.description|linebreaksbr }}</p>
+
+        <div class="todo-meta">
+            <span class="badge">Egasi: {{ todo.owner.username }}</span>
+        </div>
+    </div>
+</div>
+
+<style>
+    :root {
+        --bg: #0b1120;
+        --surface: #111827;
+        --surface-hover: #1a2333;
+        --accent: #14b8a6;
+        --accent-hover: #2dd4bf;
+        --accent-tint: rgba(20, 184, 166, 0.12);
+        --text-primary: #e2e8f0;
+        --text-secondary: #94a3b8;
+        --border: #1f2937;
+    }
+
+    body {
+        background: var(--bg);
+        margin: 0;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        margin-top: 40px;
+        padding: 0 20px 40px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .card {
+        position: relative;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        border-radius: 10px;
+        padding: 16px 20px;
+        width: 400px;
+        max-width: 100%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        transition: box-shadow 0.15s ease, transform 0.1s ease, background 0.15s ease;
+    }
+
+    .card:hover {
+        background: var(--surface-hover);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+        transform: translateY(-1px);
+    }
+
+    .card h1 {
+        margin: 0 0 12px;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-secondary);
+    }
+
+    .card h2 {
+        margin: 0 0 6px;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    .card p {
+        margin: 0 0 16px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--text-secondary);
+    }
+
+    .todo-image {
+        width: 100%;
+        max-height: 220px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        display: block;
+    }
+
+    .todo-meta {
+        margin-bottom: 16px;
+    }
+
+    .badge {
+        display: inline-block;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        color: var(--text-secondary);
+        font-size: 12px;
+        padding: 4px 10px;
+        border-radius: 999px;
+    }
+
+    .actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 8px 14px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        color: var(--text-primary);
+        background: var(--bg);
+        transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-edit:hover {
+        border-color: var(--accent);
+        background: rgba(99, 102, 241, 0.1);
+    }
+
+    .btn-delete {
+        color: var(--danger);
+        border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .btn-delete:hover {
+        background: rgba(239, 68, 68, 0.1);
+        border-color: var(--danger);
+    }
+
+    .btn-back:hover {
+        border-color: var(--text-secondary);
+    }
+</style>

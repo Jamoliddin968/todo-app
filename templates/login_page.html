@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a1128;
+    background: linear-gradient(160deg, #0a1128 0%, #16213e 50%, #0f3460 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .login-box {
+    background-color: #111c3f;
+    border: 1px solid #223163;
+    border-radius: 10px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  h1 {
+    color: #e8ecf7;
+    font-size: 22px;
+    margin: 0 0 6px;
+    text-align: center;
+  }
+
+  p.subtitle {
+    color: #7c88b8;
+    font-size: 14px;
+    margin: 0 0 28px;
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    color: #a9b4d6;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 11px 12px;
+    margin-bottom: 18px;
+    background-color: #0c1533;
+    border: 1px solid #29366b;
+    border-radius: 6px;
+    color: #e8ecf7;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #3b82f6;
+  }
+
+  input::placeholder {
+    color: #55608c;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  button:hover {
+    background-color: #1d4ed8;
+  }
+
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -8px 0 18px;
+    font-size: 13px;
+    color: #7c88b8;
+  }
+
+  a {
+    color: #6ea8fe;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+</style>
+</head>
+<body>
+
+  <form method="post" action="" class="login-box">
+    {% csrf_token %}
+    
+    <h1>Xush kelibsiz</h1>
+    <p class="subtitle">Davom etish uchun tizimga kirish talab etiladi</p>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="johndoe" required>
+
+    <label for="password">Parol:</label>
+    <input type="password" id="password" name="password" placeholder="********" required>
+
+    <div class="options">
+      <label class="checkbox">
+        <input type="checkbox" id="remember" style="width:auto; margin:0;">
+        Meni eslab qol
+      </label>
+      <a href="/password-reset/">Parolni unutdingizmi ?</a>
+    </div>
+
+    <button type="submit">Kirish</button>
+    <div style="display: flex; flex-direction: row; gap: 5px; margin-top: 10px; font-size: 12px; justify-content: center;">
+        <span style="color: white;">Akkauntingiz yo'qmi ?</span>
+        <a href="/registration/"> Ro'yxatdan o'tish</a>
+    </div>
+  </form>
+
+</body>
+</html>
