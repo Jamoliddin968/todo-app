@@ -30,12 +30,12 @@ SECRET_KEY = 'django-insecure-#)z0j#*z65ny+5==z&ih_un34u^c)-bc^stpwlf(+%#9c3g&^-
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'web-production-30a9e.up.railway.app',
-    'www.web-production-30a9e.up.railway.app',
+    'jr-todo.up.railway.app',
+    'www.jr-todo.up.railway.app',
 ]
 CSRF_TRUSTED_ORIGINS=[
-    'https://web-production-30a9e.up.railway.app',
-]
+    'https://jr-todo.up.railway.app',
+]   
 
 # Application definition
 
