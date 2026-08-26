@@ -25,12 +25,16 @@ def new_todo_page(request):
         description = request.POST.get("description")
         image = request.FILES.get("image")
 
-        Todo.objects.create(
+        new_todo = Todo.objects.create(
             owner=request.user,
             title=title,
             description=description,
-            image=image,
         )
+
+        if image:
+            new_todo.image = image
+            new_todo.save()
+
         return redirect('/')
 
     return render(request, "new_todo.html")
