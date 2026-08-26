@@ -3,12 +3,13 @@
 <div class="form-container">
     <div class="form-card">
         <h1>Yangi vazifa</h1>
-        <form method="post" action="">
+        <form method="post" action="" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="field">
                 <label for="id_title">Sarlavha:</label>
                 <input type="text" name="title" id="id_title" placeholder="Nima qilinishi kerak ?" required>
             </div>
+            <input type="file" name="image" required>
             <div class="field">
                 <label for="id_description">Ta'rifi:</label>
                 <textarea name="description" id="id_description" rows="5" placeholder="Biron ta'rif kiriting ..."></textarea>

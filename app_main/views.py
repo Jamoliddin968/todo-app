@@ -23,11 +23,13 @@ def new_todo_page(request):
     if request.method == 'POST':
         title = request.POST.get("title")
         description = request.POST.get("description")
+        image = request.FILES.get("image")
 
         Todo.objects.create(
             owner=request.user,
             title=title,
             description=description,
+            image=image,
         )
         return redirect('/')
 

@@ -32,6 +32,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'jr-todo.up.railway.app',
     'www.jr-todo.up.railway.app',
+    '127.0.0.1',
+    'localhost',
 ]
 CSRF_TRUSTED_ORIGINS=[
     'https://jr-todo.up.railway.app',
