@@ -2,12 +2,8 @@
 
 <div class="card-container">
     <div class="card todo-detail">
-        {% if todo.image %}
-            <img style="border: 1px solid rgba(255, 255, 255, 0.1);" class="todo-image" src="{{ todo.image.url }}" alt="{{ todo.title }}">
-        {% else %}
-            <img style="border: 1px solid rgba(255, 255, 255, 0.1);" class="todo-image" src="https://img.magnific.com/premium-vector/white-clipboard-task-management-todo-check-list-efficient-work-project-plan-fast-progress-level-up-concept-assignment-exam-productivity-solution-icon-3d-vector-render-pink-background_412828-2733.jpg?semt=ais_hybrid&w=740&q=80" alt="No image">
-        {% endif %}
-
+        <img style="border: 1px solid rgba(255, 255, 255, 0.1);" class="todo-image" src="{{ todo.image.url }}" alt="{{ todo.title }}">
+       
         <h1>Todo haqida to'liq ma'lumot</h1>
 
         <h2>{{ todo.title }}</h2>

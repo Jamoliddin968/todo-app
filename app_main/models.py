@@ -6,7 +6,7 @@ class Todo(models.Model):
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    image = models.ImageField(upload_to='images/', blank=True, null=True, default="default.jpg")
 
     def __str__(self):
         return self.title
